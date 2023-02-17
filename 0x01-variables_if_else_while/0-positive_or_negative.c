@@ -1,28 +1,25 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
-int main() {
-    int n;
-    
-    // Initialize the random number generator with the current time
-    srand(time(NULL));
-    
-    // Generate a random number between -100 and 100
-    n = rand() % 201 - 100;
-    
-    // Print the value of n
-    printf("n = %d\n", n);
-    
-    // Check if n is positive or negative and print the result
-    if (n > 0) {
-        printf("n is positive\n");
-    } else if (n < 0) {
-        printf("n is negative\n");
-    } else {
-        printf("n is zero\n");
-    }
-    
-    return 0;
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	if (n == 0)
+		printf("%d is zero\n", n);
+	else if (n < 0)
+		printf("%d is negative\n", n);
+	else
+		printf("%d is positive\n", n);
+
+	return (0);
 }
-
